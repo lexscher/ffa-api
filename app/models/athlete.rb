@@ -1,7 +1,5 @@
 class Athlete < ApplicationRecord
     has_many :routines
-    has_many :favorites
-    has_many :routines, through: :favorites
 
     has_many :friended_athletes, foreign_key: :friender_id, class_name: 'Friend'
     has_many :friendees, through: :friended_athletes
