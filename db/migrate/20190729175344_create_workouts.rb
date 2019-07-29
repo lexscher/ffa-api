@@ -3,7 +3,6 @@ class CreateWorkouts < ActiveRecord::Migration[5.2]
     create_table :workouts do |t|
       t.references :routine, foreign_key: true
       t.string :name
-      t.integer :intensity
 
       t.timestamps
     end
