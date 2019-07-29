@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  routine: one
+  name: MyString
+  intensity: 1
+
+two:
+  routine: two
+  name: MyString
+  intensity: 1
