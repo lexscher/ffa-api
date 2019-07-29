@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :friends
+  resources :friends, except: :update
   resources :exercises
   resources :workouts
   resources :routines
