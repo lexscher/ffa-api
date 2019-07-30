@@ -1,6 +1,6 @@
 # Fitness For All Api
 
-This is the database for our app, Fitness For All
+This is the database for the app, [Fitness For All](https://github.com/KevinLai76/ffa)
 
 Created with the command
 
@@ -23,3 +23,7 @@ Created with the command
 ### Wireframes
 
 If you'd like to check out our InVision Freehand, you can use this link, [here](https://projects.invisionapp.com/freehand/document/PG5OL3UHJ)
+
+---
+
+Developed by [Kevin Lai](https://github.com/KevinLai76/) & Alexander Schelchere
