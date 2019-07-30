@@ -11,6 +11,10 @@ class FriendsController < ApplicationController
     render json: FriendSerializer.new(friend)
   end
 
+  def destroy
+
+  end
+
   private
 
   def find_friend 

@@ -7,9 +7,13 @@ class AthletesController < ApplicationController
 
   def show
     find_athlete
-    find_friends
 
     render json: AthleteSerializer.new(@athlete)
+  end
+
+
+  def destroy
+
   end
 
   private
