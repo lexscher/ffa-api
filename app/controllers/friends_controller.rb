@@ -1,4 +1,5 @@
 class FriendsController < ApplicationController
+  before_action :find_friend, only: [:show, :destroy]
 
   def index
     @friends = Friend.all
@@ -6,13 +7,20 @@ class FriendsController < ApplicationController
   end
 
   def show
-    friend = Friend.find(params[:id])
+    render json: FriendSerializer.new(@friend)
+  end
 
-    render json: FriendSerializer.new(friend)
+  def create
+    @friend = Friend.create(friend_params)
+    if @friend.valid? 
+      render json: @friend
+    else
+      render json: { errors: @friend.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def destroy
-
+    @friend.destroy
   end
 
   private
@@ -21,5 +29,8 @@ class FriendsController < ApplicationController
     @friend = Friend.find(params[:id])
   end
 
+  def friend_params
+    params.permit(:friender_id, :friendee_id)
+  end
 
 end
