@@ -1,19 +1,27 @@
 class AthletesController < ApplicationController
+  before_action :find_athlete, only: [:show, :destroy]
 
   def index
-    athletes = Athlete.all
-    render json: AthleteSerializer.new(athletes)
+    @athletes = Athlete.all
+    render json: AthleteSerializer.new(@athletes)
   end
 
   def show
-    find_athlete
-
     render json: AthleteSerializer.new(@athlete)
+  end
+
+  def create
+    @athlete = Athlete.create(athlete_params)
+    if @athlete.valid?
+      render json: @athlete
+    else
+      render json: { errors: @athlete.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
 
   def destroy
-
+    @athlete.destroy
   end
 
   private
@@ -22,8 +30,7 @@ class AthletesController < ApplicationController
     @athlete = Athlete.find(params[:id])
   end
 
-  def find_friends
-    find_athlete
-    @friends = @athlete.friends
+  def athlete_params
+    params.permit(:name, :username, :email, :password_digest)
   end
 end
