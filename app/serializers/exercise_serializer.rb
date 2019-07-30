@@ -1,4 +1,10 @@
 class ExerciseSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :name, :description, :reps, :sets
+
+  attributes :workouts do |exercise|
+    workout_array = []
+    workout_array << exercise.workout
+    workout_array.flatten
+  end 
 end
