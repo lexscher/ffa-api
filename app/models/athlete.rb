@@ -1,11 +1,11 @@
 class Athlete < ApplicationRecord
-    has_many :routines
+    has_many :routines, dependent: :destroy
 
-    has_many :friended_athletes, foreign_key: :friender_id, class_name: 'Friend'
-    has_many :friendees, through: :friended_athletes
+    has_many :friended_athletes, foreign_key: :friender_id, class_name: 'Friend', dependent: :destroy
+    has_many :friendees, through: :friended_athletes, dependent: :destroy
 
-    has_many :friending_athletes, foreign_key: :friendee_id, class_name: 'Friend'
-    has_many :frienders, through: :friending_athletes
+    has_many :friending_athletes, foreign_key: :friendee_id, class_name: 'Friend', dependent: :destroy
+    has_many :frienders, through: :friending_athletes, dependent: :destroy
 
     # Get all friendEES and friendERS
     def friends
