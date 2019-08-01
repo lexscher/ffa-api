@@ -26,10 +26,10 @@ rings = Workout.create(routine: calisthenics, name: 'Rings')
 floor = Workout.create(routine: calisthenics, name: 'Floor')
 
 # exercises
-bench = Exercise.create(workout: push, name: 'Bench Press', description: 'The manliest exercise', reps: '5x', sets: '6x')
-over_head_press = Exercise.create(workout: push, name: 'Over Head Press', description: 'The other manliest exercise', reps: '4x', sets: '4x')
+bench = Exercise.create(workout: push, name: 'Bench Press', description: 'The best exercise', reps: '5x', sets: '6x')
+over_head_press = Exercise.create(workout: push, name: 'Over Head Press', description: 'The other best exercise', reps: '4x', sets: '4x')
 
-squat = Exercise.create(workout: legs, name: 'Squat', description: 'The best manliest exercise', reps: '4x', sets: '8x')
+squat = Exercise.create(workout: legs, name: 'Squat', description: 'The best greatest exercise', reps: '4x', sets: '8x')
 dead_lift = Exercise.create(workout: legs, name: 'Deadlift', description: 'The strongest exercise', reps: '8x', sets: '8x')
 
 push_up = Exercise.create(workout: upper_body, name: 'Push Up', description: 'Test Test', reps: '15x', sets: '5x')

@@ -8,4 +8,8 @@ class AthleteSerializer
     friends_array << athlete.friendees
     friends_array.flatten
   end
+
+  attribute :routines do |athlete|
+    athlete.routines
+  end
 end
